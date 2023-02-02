@@ -1,0 +1,27 @@
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\bin\Debug\net6.0\appsettings.Development.json
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\bin\Debug\net6.0\appsettings.json
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\bin\Debug\net6.0\01NET - CJ-ASP-Travel.staticwebassets.runtime.json
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\bin\Debug\net6.0\01NET - CJ-ASP-Travel.exe
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\bin\Debug\net6.0\01NET - CJ-ASP-Travel.deps.json
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\bin\Debug\net6.0\01NET - CJ-ASP-Travel.runtimeconfig.json
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\bin\Debug\net6.0\01NET - CJ-ASP-Travel.dll
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\bin\Debug\net6.0\01NET - CJ-ASP-Travel.pdb
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.csproj.AssemblyReference.cache
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.AssemblyInfoInputs.cache
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.AssemblyInfo.cs
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.csproj.CoreCompileInputs.cache
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.MvcApplicationPartsAssemblyInfo.cache
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\staticwebassets\msbuild.01NET - CJ-ASP-Travel.Microsoft.AspNetCore.StaticWebAssets.props
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\staticwebassets\msbuild.build.01NET - CJ-ASP-Travel.props
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.01NET - CJ-ASP-Travel.props
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.01NET - CJ-ASP-Travel.props
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\staticwebassets.pack.json
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\staticwebassets.build.json
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\staticwebassets.development.json
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\scopedcss\bundle\01NET - CJ-ASP-Travel.styles.css
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.dll
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\refint\01NET - CJ-ASP-Travel.dll
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.pdb
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\01NET - CJ-ASP-Travel.genruntimeconfig.cache
+D:\C#-workspace\NET-workspace\01NET - CJ-ASP-Travel\obj\Debug\net6.0\ref\01NET - CJ-ASP-Travel.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\01NET - CJ-ASP-Travel.props" />
+</Project>

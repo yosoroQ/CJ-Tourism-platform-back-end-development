@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "93QbWMeFxsULz8i+Jmv5oMf4iiKHVXyW022F7Xk8qaQ=",
+  "Source": "01NET - CJ-ASP-Travel",
+  "BasePath": "_content/01NET - CJ-ASP-Travel",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "01NET - CJ-ASP-Travel\\wwwroot",
+      "Source": "01NET - CJ-ASP-Travel",
+      "ContentRoot": "D:\\C#-workspace\\NET-workspace\\01NET - CJ-ASP-Travel\\wwwroot\\",
+      "BasePath": "_content/01NET - CJ-ASP-Travel",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

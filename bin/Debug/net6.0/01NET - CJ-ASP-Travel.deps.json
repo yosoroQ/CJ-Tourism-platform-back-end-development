@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "01NET - CJ-ASP-Travel/1.0.0": {
+        "runtime": {
+          "01NET - CJ-ASP-Travel.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "01NET - CJ-ASP-Travel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
