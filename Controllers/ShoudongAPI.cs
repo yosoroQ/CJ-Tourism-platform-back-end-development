@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FakeXiecheng.API.Controllers
+namespace _01NET___CJ_ASP_Travel.Controllers
 {
     [Route("api/shoudongapi")]
     //[Controller]
