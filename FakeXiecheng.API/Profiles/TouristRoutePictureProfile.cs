@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using _02NET___CJ_ASP_Travel.Dtos;
-using _02NET___CJ_ASP_Travel.Models;
+using _03NET___CJ_ASP_Travel3.Dtos;
+using _03NET___CJ_ASP_Travel3.Models;
 
-namespace _02NET___CJ_ASP_Travel.Profiles
+namespace _03NET___CJ_ASP_Travel3.Profiles
 {
-    public class TouristRoutePictureProfile: Profile
+    public class TouristRoutePictureProfile : Profile
     {
         public TouristRoutePictureProfile()
         {

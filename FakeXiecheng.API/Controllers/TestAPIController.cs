@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace _02NET___CJ_ASP_Travel.Controllers
+namespace _03NET___CJ_ASP_Travel3.Controllers
 {
     [Route("api/[controller]")]
     public class TestAPIController : Controller

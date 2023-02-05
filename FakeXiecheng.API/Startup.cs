@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using _02NET___CJ_ASP_Travel.Database;
-using _02NET___CJ_ASP_Travel.Services;
+using _03NET___CJ_ASP_Travel3.Database;
+using _03NET___CJ_ASP_Travel3.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -15,8 +15,13 @@ using Microsoft.AspNetCore.Mvc.Formatters;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.AspNetCore.Identity;
+using _03NET___CJ_ASP_Travel3.Models;
 
-namespace FakeXiecheng.API
+namespace _03NET___CJ_ASP_Travel3
 {
     public class Startup
     {
@@ -31,23 +36,47 @@ namespace FakeXiecheng.API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    var secretByte = Encoding.UTF8.GetBytes(Configuration["Authentication:SecretKey"]);
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = Configuration["Authentication:Issuer"],
+
+                        ValidateAudience = true,
+                        ValidAudience = Configuration["Authentication:Audience"],
+
+                        ValidateLifetime = true,
+
+                        IssuerSigningKey = new SymmetricSecurityKey(secretByte)
+                    };
+                });
             services.AddControllers(setupAction => {
                 setupAction.ReturnHttpNotAcceptable = true;
+                //setupAction.OutputFormatters.Add(
+                //    new XmlDataContractSerializerOutputFormatter()    
+                //);
             })
             .AddNewtonsoftJson(setupAction => {
                 setupAction.SerializerSettings.ContractResolver =
                     new CamelCasePropertyNamesContractResolver();
-            }).AddXmlDataContractSerializerFormatters()
-            .ConfigureApiBehaviorOptions(setupAction =>
+            })
+            .AddXmlDataContractSerializerFormatters()
+            .ConfigureApiBehaviorOptions(setupAction => 
             {
                 setupAction.InvalidModelStateResponseFactory = context =>
                 {
                     var problemDetail = new ValidationProblemDetails(context.ModelState)
                     {
-                        Type = "ÎÞËùÎ½",
-                        Title = "Êý¾ÝÑéÖ¤Ê§°Ü",
+                        Type = "ï¿½ï¿½ï¿½ï¿½Î½",
+                        Title = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤Ê§ï¿½ï¿½",
                         Status = StatusCodes.Status422UnprocessableEntity,
-                        Detail = "Çë¿´ÏêÏ¸ËµÃ÷",
+                        Detail = "ï¿½ë¿´ï¿½ï¿½Ï¸Ëµï¿½ï¿½",
                         Instance = context.HttpContext.Request.Path
                     };
                     problemDetail.Extensions.Add("traceId", context.HttpContext.TraceIdentifier);
@@ -57,19 +86,15 @@ namespace FakeXiecheng.API
                     };
                 };
             });
-
-            //×¢²áÊý¾Ý²Ö¿âµÄ·þÎñÒÀÀµ
-            //ÒÔÏÂÈý¸öAdd¶¼¿ÉÒÔÓÃÓÚÒÀÀµ×¢Èë
+            services.AddTransient<ITouristRouteRepository, TouristRouteRepository>();
             //services.AddSingleton
             //services.AddScoped
-            services.AddTransient<ITouristRouteRepository, TouristRouteRepository>();
 
-            /*            Êý¾Ý¿âÓ³Éä*/
             services.AddDbContext<AppDbContext>(options => {
                 options.UseSqlServer(Configuration["DbContext:ConnectionString"]);
             });
 
-            // É¨ÃèprofileÎÄ¼þ
+            // É¨ï¿½ï¿½profileï¿½Ä¼ï¿½
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
@@ -81,7 +106,12 @@ namespace FakeXiecheng.API
                 app.UseDeveloperExceptionPage();
             }
 
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½
             app.UseRouting();
+            // ï¿½ï¿½ï¿½ï¿½Ë­ï¿½ï¿½
+            app.UseAuthentication();
+            // ï¿½ï¿½ï¿½ï¿½Ô¸ï¿½Ê²Ã´ï¿½ï¿½ï¿½ï¿½Ê²Ã´È¨ï¿½Þ£ï¿½
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

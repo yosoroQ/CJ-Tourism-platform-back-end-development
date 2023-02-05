@@ -1,14 +1,15 @@
-﻿using _02NET___CJ_ASP_Travel.Dtos;
-using _02NET___CJ_ASP_Travel.Models;
-using _02NET___CJ_ASP_Travel.Services;
-using AutoMapper;
+﻿using AutoMapper;
+using _03NET___CJ_ASP_Travel3.Dtos;
+using _03NET___CJ_ASP_Travel3.Models;
+using _03NET___CJ_ASP_Travel3.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _02NET___CJ_ASP_Travel.Controllers
+namespace _03NET___CJ_ASP_Travel3.Controllers
 {
     [Route("api/touristRoutes/{touristRouteId}/pictures")]
     [ApiController]
@@ -31,13 +32,13 @@ namespace _02NET___CJ_ASP_Travel.Controllers
         [HttpGet]
         public async Task<IActionResult> GetPictureListForTouristRoute(Guid touristRouteId)
         {
-            if (!(await _touristRouteRepository.TouristRouteExistsAsync(touristRouteId)))
+            if (!(await _touristRouteRepository.TouristRouteExistsAsync(touristRouteId))) 
             {
-                return NotFound("旅游线路不存在");
+                return NotFound("旅游线路不存在");    
             }
 
             var picturesFromRepo = await _touristRouteRepository.GetPicturesByTouristRouteIdAsync(touristRouteId);
-            if (picturesFromRepo == null || picturesFromRepo.Count() <= 0)
+            if(picturesFromRepo==null|| picturesFromRepo.Count() <= 0)
             {
                 return NotFound("照片不存在");
             }
@@ -63,6 +64,8 @@ namespace _02NET___CJ_ASP_Travel.Controllers
         }
 
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateTouristRoutePicture(
             [FromRoute] Guid touristRouteId,
             [FromBody] TouristRoutePictureForCreationDto touristRoutePictureForCreationDto
@@ -89,9 +92,11 @@ namespace _02NET___CJ_ASP_Travel.Controllers
         }
 
         [HttpDelete("{pictureId}")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeletePicture(
-            [FromRoute] Guid touristRouteId,
-            [FromRoute] int pictureId
+            [FromRoute]Guid touristRouteId, 
+            [FromRoute]int pictureId
         )
         {
             if (!(await _touristRouteRepository.TouristRouteExistsAsync(touristRouteId)))

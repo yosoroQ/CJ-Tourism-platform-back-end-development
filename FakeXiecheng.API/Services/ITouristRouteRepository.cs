@@ -1,18 +1,14 @@
-﻿using _02NET___CJ_ASP_Travel.Models;
+﻿using _03NET___CJ_ASP_Travel3.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
-namespace _02NET___CJ_ASP_Travel.Services
+namespace _03NET___CJ_ASP_Travel3.Services
 {
     public interface ITouristRouteRepository
     {
-        //返回一组旅游路线
         Task<IEnumerable<TouristRoute>> GetTouristRoutesAsync(string keyword, string ratingOperator, int? ratingValue);
-
-        //返回单独的旅游路线
         Task<TouristRoute> GetTouristRouteAsync(Guid touristRouteId);
         Task<bool> TouristRouteExistsAsync(Guid touristRouteId);
         Task<IEnumerable<TouristRoutePicture>> GetPicturesByTouristRouteIdAsync(Guid touristRouteId);

@@ -1,10 +1,10 @@
-﻿//using FakeXiecheng.API.Models;
+﻿//using _03NET___CJ_ASP_Travel3.Models;
 //using System;
 //using System.Collections.Generic;
 //using System.Linq;
 //using System.Threading.Tasks;
 
-//namespace FakeXiecheng.API.Services
+//namespace _03NET___CJ_ASP_Travel3.Services
 //{
 //    public class MockTouristRouteRepository : ITouristRouteRepository
 //    {

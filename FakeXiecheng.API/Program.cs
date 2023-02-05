@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace FakeXiecheng.API
+namespace _03NET___CJ_ASP_Travel3
 {
     public class Program
     {

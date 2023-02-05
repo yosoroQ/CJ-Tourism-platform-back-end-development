@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace _02NET___CJ_ASP_Travel.ResourceParameters
+namespace _03NET___CJ_ASP_Travel3.ResourceParameters
 {
     public class TouristRouteResourceParamaters
     {

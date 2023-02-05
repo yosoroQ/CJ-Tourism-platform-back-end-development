@@ -1,12 +1,11 @@
-﻿
+﻿using _03NET___CJ_ASP_Travel3.ValidationAttributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using _02NET___CJ_ASP_Travel.ValidationAttributes;
 
-namespace _02NET___CJ_ASP_Travel.Dtos
+namespace _03NET___CJ_ASP_Travel3.Dtos
 {
     [TouristRouteTitleMustBeDifferentFromDescriptionAttribute]
     public abstract class TouristRouteForManipulationDto

@@ -1,12 +1,12 @@
-﻿using _02NET___CJ_ASP_Travel.Database;
-using _02NET___CJ_ASP_Travel.Models;
+﻿using _03NET___CJ_ASP_Travel3.Database;
+using _03NET___CJ_ASP_Travel3.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _02NET___CJ_ASP_Travel.Services
+namespace _03NET___CJ_ASP_Travel3.Services
 {
     public class TouristRouteRepository : ITouristRouteRepository
     {
@@ -23,15 +23,15 @@ namespace _02NET___CJ_ASP_Travel.Services
         }
 
         public async Task<IEnumerable<TouristRoute>> GetTouristRoutesAsync(
-            string keyword,
-            string ratingOperator,
+            string keyword, 
+            string ratingOperator, 
             int? ratingValue
         )
         {
             IQueryable<TouristRoute> result = _context
                 .TouristRoutes
                 .Include(t => t.TouristRoutePictures);
-            if (!string.IsNullOrWhiteSpace(keyword))
+            if(!string.IsNullOrWhiteSpace(keyword))
             {
                 keyword = keyword.Trim();
                 result = result.Where(t => t.Title.Contains(keyword));
@@ -72,7 +72,7 @@ namespace _02NET___CJ_ASP_Travel.Services
 
         public void AddTouristRoute(TouristRoute touristRoute)
         {
-            if (touristRoute == null)
+            if(touristRoute==null)
             {
                 throw new ArgumentNullException(nameof(touristRoute));
             }

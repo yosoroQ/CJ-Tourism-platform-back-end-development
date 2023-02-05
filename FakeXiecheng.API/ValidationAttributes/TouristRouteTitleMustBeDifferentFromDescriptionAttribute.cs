@@ -1,16 +1,20 @@
-﻿using _02NET___CJ_ASP_Travel.Dtos;
+﻿using _03NET___CJ_ASP_Travel3.Dtos;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace _02NET___CJ_ASP_Travel.ValidationAttributes
+namespace _03NET___CJ_ASP_Travel3.ValidationAttributes
 {
-    public class TouristRouteTitleMustBeDifferentFromDescriptionAttribute : ValidationAttribute
+    public class TouristRouteTitleMustBeDifferentFromDescriptionAttribute: ValidationAttribute
     {
         protected override ValidationResult IsValid(
-            object value,
+            object value, 
             ValidationContext validationContext
         )
         {
-            var touristRouteDto = (TouristRouteForCreationDto)validationContext.ObjectInstance;
+            var touristRouteDto = (TouristRouteForManipulationDto)validationContext.ObjectInstance;
             if (touristRouteDto.Title == touristRouteDto.Description)
             {
                 return new ValidationResult(

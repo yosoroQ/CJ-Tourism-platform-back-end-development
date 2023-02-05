@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace FakeXiecheng.API.Migrations
+namespace _03NET___CJ_ASP_Travel3.Migrations
 {
     public partial class DataSeeding2 : Migration
     {

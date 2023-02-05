@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace _02NET___CJ_ASP_Travel.Helper
+namespace _03NET___CJ_ASP_Travel3.Helper
 {
     public class ArrayModelBinder : IModelBinder
     {

@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using _03NET___CJ_ASP_Travel3.Dtos;
+using _03NET___CJ_ASP_Travel3.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
 using System.Text.RegularExpressions;
+using _03NET___CJ_ASP_Travel3.ResourceParameters;
+using _03NET___CJ_ASP_Travel3.Models;
 using Microsoft.AspNetCore.JsonPatch;
-using _02NET___CJ_ASP_Travel.Dtos;
-using _02NET___CJ_ASP_Travel.Models;
-using _02NET___CJ_ASP_Travel.ResourceParameters;
-using _02NET___CJ_ASP_Travel.Services;
-using _02NET___CJ_ASP_Travel.Helper;
+using _03NET___CJ_ASP_Travel3.Helper;
+using Microsoft.AspNetCore.Authorization;
 
-namespace _02NET___CJ_ASP_Travel.Controllers
+namespace _03NET___CJ_ASP_Travel3.Controllers
 {
     [Route("api/[controller]")] // api/touristroute
     [ApiController]
@@ -58,12 +59,29 @@ namespace _02NET___CJ_ASP_Travel.Controllers
             {
                 return NotFound($"旅游路线{touristRouteId}找不到");
             }
-
+            //var touristRouteDto = new TouristRouteDto()
+            //{
+            //    Id = touristRouteFromRepo.Id,
+            //    Title = touristRouteFromRepo.Title,
+            //    Description = touristRouteFromRepo.Description,
+            //    Price = touristRouteFromRepo.OriginalPrice * (decimal)(touristRouteFromRepo.DiscountPresent ?? 1),
+            //    CreateTime = touristRouteFromRepo.CreateTime,
+            //    UpdateTime = touristRouteFromRepo.UpdateTime,
+            //    Features = touristRouteFromRepo.Features,
+            //    Fees = touristRouteFromRepo.Fees,
+            //    Notes = touristRouteFromRepo.Notes,
+            //    Rating = touristRouteFromRepo.Rating,
+            //    TravelDays = touristRouteFromRepo.TravelDays.ToString(),
+            //    TripType = touristRouteFromRepo.TripType.ToString(),
+            //    DepartureCity = touristRouteFromRepo.DepartureCity.ToString()
+            //};
             var touristRouteDto = _mapper.Map<TouristRouteDto>(touristRouteFromRepo);
             return Ok(touristRouteDto);
         }
 
         [HttpPost]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize]
         public async Task<IActionResult> CreateTouristRoute([FromBody] TouristRouteForCreationDto touristRouteForCreationDto)
         {
             var touristRouteModel = _mapper.Map<TouristRoute>(touristRouteForCreationDto);
@@ -78,8 +96,10 @@ namespace _02NET___CJ_ASP_Travel.Controllers
         }
 
         [HttpPut("{touristRouteId}")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateTouristRoute(
-            [FromRoute] Guid touristRouteId,
+            [FromRoute]Guid touristRouteId,
             [FromBody] TouristRouteForUpdateDto touristRouteForUpdateDto
         )
         {
@@ -100,8 +120,10 @@ namespace _02NET___CJ_ASP_Travel.Controllers
         }
 
         [HttpPatch("{touristRouteId}")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PartiallyUpdateTouristRoute(
-            [FromRoute] Guid touristRouteId,
+            [FromRoute]Guid touristRouteId,
             [FromBody] JsonPatchDocument<TouristRouteForUpdateDto> patchDocument
         )
         {
@@ -124,6 +146,8 @@ namespace _02NET___CJ_ASP_Travel.Controllers
         }
 
         [HttpDelete("{touristRouteId}")]
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteTouristRoute([FromRoute] Guid touristRouteId)
         {
             if (!(await _touristRouteRepository.TouristRouteExistsAsync(touristRouteId)))
@@ -139,10 +163,11 @@ namespace _02NET___CJ_ASP_Travel.Controllers
         }
 
         [HttpDelete("({touristIDs})")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteByIDs(
-            [ModelBinder(BinderType = typeof(ArrayModelBinder))][FromRoute] IEnumerable<Guid> touristIDs)
+            [ModelBinder( BinderType = typeof(ArrayModelBinder))][FromRoute]IEnumerable<Guid> touristIDs)
         {
-            if (touristIDs == null)
+            if(touristIDs == null)
             {
                 return BadRequest();
             }

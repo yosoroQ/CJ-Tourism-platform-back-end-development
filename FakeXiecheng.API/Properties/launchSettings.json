@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "FakeXiecheng.API": {
+    "_03NET___CJ_ASP_Travel3": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
