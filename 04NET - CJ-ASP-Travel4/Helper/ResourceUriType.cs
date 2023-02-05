@@ -8,6 +8,7 @@ namespace _04NET___CJ_ASP_Travel4.Helper
     public enum ResourceUriType
     {
         PreviousPage,
-        NextPage
+        NextPage,
+        CurrnetPage
     }
 }

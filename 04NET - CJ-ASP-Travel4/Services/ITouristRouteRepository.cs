@@ -9,15 +9,10 @@ namespace _04NET___CJ_ASP_Travel4.Services
 {
     public interface ITouristRouteRepository
     {
-        /*        Task<IEnumerable<TouristRoute>> GetTouristRoutesAsync(
-            string keyword, string ratingOperator, int? ratingValue
-                    //分页
-            , int pageSize, int pageNumber);*/
-
         Task<PaginationList<TouristRoute>> GetTouristRoutesAsync(
             string keyword, string ratingOperator, int? ratingValue
             //分页
-            , int pageSize, int pageNumber);
+            , int pageSize, int pageNumber, string orderBy);
 
         Task<TouristRoute> GetTouristRouteAsync(Guid touristRouteId);
         Task<bool> TouristRouteExistsAsync(Guid touristRouteId);

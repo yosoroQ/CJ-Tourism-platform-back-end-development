@@ -32,7 +32,7 @@ namespace _04NET___CJ_ASP_Travel4.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetOrders")]
         [Authorize(AuthenticationSchemes = "Bearer")]
         public async Task<IActionResult> GetOrders([FromQuery] PaginationResourceParamaters paramaters)
         {

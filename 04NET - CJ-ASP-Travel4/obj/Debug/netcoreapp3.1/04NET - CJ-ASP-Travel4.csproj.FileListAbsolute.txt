@@ -147,3 +147,4 @@ D:\C#-workspace\NET-workspace\04NET - CJ-ASP-Travel4\FakeXiecheng.API\obj\Debug\
 D:\C#-workspace\NET-workspace\04NET - CJ-ASP-Travel4\FakeXiecheng.API\obj\Debug\netcoreapp3.1\04NET - CJ-ASP-Travel4.pdb
 D:\C#-workspace\NET-workspace\04NET - CJ-ASP-Travel4\FakeXiecheng.API\obj\Debug\netcoreapp3.1\04NET - CJ-ASP-Travel4.genruntimeconfig.cache
 D:\C#-workspace\NET-workspace\04NET - CJ-ASP-Travel4\FakeXiecheng.API\bin\Debug\netcoreapp3.1\Stateless.dll
+D:\C#-workspace\NET-workspace\04NET - CJ-ASP-Travel4\FakeXiecheng.API\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll

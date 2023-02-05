@@ -29,7 +29,7 @@ namespace _04NET___CJ_ASP_Travel4.Controllers
                 throw new ArgumentNullException(nameof(mapper));
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetPictureListForTouristRoute")]
         public async Task<IActionResult> GetPictureListForTouristRoute(Guid touristRouteId)
         {
             if (!(await _touristRouteRepository.TouristRouteExistsAsync(touristRouteId))) 
@@ -63,7 +63,7 @@ namespace _04NET___CJ_ASP_Travel4.Controllers
             return Ok(_mapper.Map<TouristRoutePictureDto>(pictureFromRepo));
         }
 
-        [HttpPost]
+        [HttpPost(Name = "CreateTouristRoutePicture")]
         [Authorize(AuthenticationSchemes = "Bearer")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> CreateTouristRoutePicture(

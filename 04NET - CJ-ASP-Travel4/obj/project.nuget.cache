@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vXL2vTEY9z5FyDOJqL4uNaOLl91SHOhU6plm3B4AKmKR0GjZ7E76TWqrEVCCgx1o3iVVRI87fzhYUPJnUuBrfA==",
+  "dgSpecHash": "4u7ayDNZoh4DKjNRJf8AlgAhtQAXFZ3fMh8uVFUA0m7Zat47n7+Sc2XpEajX+b/zFJfIPubIqAY3RBZ+qGC/zA==",
   "success": true,
   "projectFilePath": "D:\\C#-workspace\\git-单体项目\\CJ-Tourism-platform-back-end-development\\04NET - CJ-ASP-Travel4\\04NET - CJ-ASP-Travel4.csproj",
   "expectedPackageFiles": [
@@ -122,6 +122,7 @@
     "C:\\Users\\one\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\one\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\one\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
+    "C:\\Users\\one\\.nuget\\packages\\system.linq.dynamic.core\\1.2.24\\system.linq.dynamic.core.1.2.24.nupkg.sha512",
     "C:\\Users\\one\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\one\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\one\\.nuget\\packages\\system.net.http\\4.3.0\\system.net.http.4.3.0.nupkg.sha512",

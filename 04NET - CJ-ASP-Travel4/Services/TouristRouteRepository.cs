@@ -1,4 +1,5 @@
 ﻿using _04NET___CJ_ASP_Travel4.Database;
+using _04NET___CJ_ASP_Travel4.Dtos;
 using _04NET___CJ_ASP_Travel4.Helper;
 using _04NET___CJ_ASP_Travel4.Models;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +13,15 @@ namespace _04NET___CJ_ASP_Travel4.Services
     public class TouristRouteRepository : ITouristRouteRepository
     {
         private readonly AppDbContext _context;
+        private readonly IPropertyMappingService _propertyMappingService;
 
-        public TouristRouteRepository(AppDbContext appDbContext)
+        public TouristRouteRepository(
+            AppDbContext appDbContext,
+            IPropertyMappingService propertyMappingService
+        )
         {
             _context = appDbContext;
+            _propertyMappingService = propertyMappingService;
         }
 
         public async Task<TouristRoute> GetTouristRouteAsync(Guid touristRouteId)
@@ -30,7 +36,8 @@ namespace _04NET___CJ_ASP_Travel4.Services
             int? ratingValue,
              //分页
             int pageSize,
-            int pageNumber
+            int pageNumber,
+            string orderBy
         )
 
         {
@@ -50,6 +57,22 @@ namespace _04NET___CJ_ASP_Travel4.Services
                     "lessThan" => result.Where(t => t.Rating <= ratingValue),
                     _ => result.Where(t => t.Rating == ratingValue),
                 };
+            }
+
+/*            if (!string.IsNullOrWhiteSpace(orderBy))
+            {
+                if (orderBy.ToLowerInvariant() == "originalprice")
+                {
+                    result = result.OrderBy(t => t.OriginalPrice);
+                }
+            }*/
+
+            if (!string.IsNullOrWhiteSpace(orderBy))
+            {
+                var touristRouteMappingDictionary = _propertyMappingService
+                    .GetPropertyMapping<TouristRouteDto, TouristRoute>();
+
+                result = result.ApplySort(orderBy, touristRouteMappingDictionary);
             }
 
             // include vs join
